@@ -676,8 +676,17 @@ bool parse_cmd_line(int argc, char **argv)
 			get_next_word(s, sizeof(s)); 
 			change_dir(s);
 		}
+		else if (strcasecmp(s, "-joynum")==0)
+		{
+			get_next_word(s, sizeof(s));
 
-		// if user wants laserdisc player to blank video while searching (VLDP only)
+			int joynum = atoi(s);
+			set_joy_num(joynum);
+            sprintf(s, "Using joystick %d", joynum);
+            printline(s);
+		}
+
+			// if user wants laserdisc player to blank video while searching (VLDP only)
 		else if (strcasecmp(s, "-blank_searches")==0)
 		{
 			g_ldp->set_search_blanking(true);
