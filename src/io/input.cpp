@@ -283,10 +283,10 @@ int SDL_input_init()
 			// if there is at least 1 joystick and we are authorized to use the joystick for input
 			if (SDL_NumJoysticks() > 0)
 			{
-                char str[40];
-                sprintf(str, "NumSticks %d", SDL_NumJoysticks());
-                printline(str);
-                G_joystick = SDL_JoystickOpen(g_joy_num);
+				char str[40];
+				sprintf(str, "NumSticks %d", SDL_NumJoysticks());
+				printline(str);
+				G_joystick = SDL_JoystickOpen(g_joy_num);
 				if (G_joystick != NULL)
 				{
 					sprintf(str, "Joystick  %d was successfully opened", g_joy_num);
